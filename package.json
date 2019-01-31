@@ -1,0 +1,64 @@
+{
+    "name": "emailchecker",
+    "version": "0.0.1",
+    "description": "Typescript Project",
+    "main": "dist/index.js",
+    "author": "Arsen A. Gutsal ",
+    "license": "MIT",
+    "scripts": {
+        "start": "ts-node -r tsconfig-paths/register src/index.ts",
+        "build": "webpack",
+        "lint": "tslint src/**/*.ts",
+        "test": "jest --colors --watchAll",
+        "test:ci": "cross-env CI=true jest --colors",
+        "format": "prettier --write \"src/**/*\"",
+        "conflict-rules": "tslint-config-prettier-check ./tslint.json"
+    },
+    "jest": {
+        "globals": {
+            "ts-jest": {
+                "tsConfig": "<rootDir>/tsconfig.json"
+            }
+        },
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx,ts,tsx}"
+        ],
+        "moduleNameMapper": {
+            "^~/(.*)$": "<rootDir>/src/$1"
+        },
+        "moduleDirectories": [
+            "<rootDir>/src",
+            "node_modules"
+        ],
+        "preset": "ts-jest"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,jsx}": [
+            "prettier --write",
+            "tslint -c tslint.json --fix",
+            "git add"
+        ],
+        "*.{json,css}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "prettier": {
+        "parser": "typescript",
+        "semi": false,
+        "singleQuote": true,
+        "overrides": [
+            {
+                "files": "*.json",
+                "options": {
+                    "parser": "json"
+                }
+            }
+        ]
+    }
+}
