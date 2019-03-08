@@ -119,10 +119,10 @@ let root = commandpost
                                       log.info(JSON.stringify(partEmails));
                                       checkParallel(partEmails, 20)
                                           .then((results:any) => {
-                                              results.forEach((it:any) => {
+                                              results.forEach(async (it:any) => {
                                                   console.log(`Updating ${it.email}`);
-                                                  BadooModel.updateMany({ email: it.email }, { $set: { emailExists: it.status } })
-                                                      .then(()=> console.log(`Updated ${it.email}`))
+                                                  await BadooModel.updateMany({ email: it.email }, { $set: { emailExists: it.status } })
+                                                      .then(()=> console.log(`Updated ${it.email}:${it.status}`))
                                                       .catch(err => console.log(err))
 
                                               })
