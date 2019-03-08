@@ -105,7 +105,7 @@ let root = commandpost
                         //const db = mongoose.connection;
                         //BadooModel.findOne().cursor
 
-                        const cursor = BadooModel.find(JSON.parse(opts.query)).limit(100).cursor();
+                        const cursor = BadooModel.find(JSON.parse(opts.query)).cursor();
                         const emails: string[] = [];
                         cursor.on('data', (obj:any) => emails.push(obj.email));
                         cursor.on('end', async () => {
