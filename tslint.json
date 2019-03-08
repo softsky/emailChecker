@@ -2,7 +2,7 @@
     "rules": {
         "no-console": false,
         "semicolon": [
-            true,
+            false,
             "never"
         ],
         "prettier": true
