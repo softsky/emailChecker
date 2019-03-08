@@ -91,7 +91,7 @@ let root = commandpost
                 date_of_birth: Date,
                 age_as_of_2012: Number,
                 gender: String,
-                emailExists: boolean,
+                emailExists: Boolean,
                 num1: Number,
                 num2: Number,
                 num3: Number
