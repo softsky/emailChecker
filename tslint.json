@@ -5,12 +5,12 @@
             false,
             "never"
         ],
+        "object-literal-sort-keys": false,
+        "no-var-requires": false,
         "prettier": true
     },
     "extends": [
-        "tslint:recommended",
-        "tslint-config-prettier",
-        "tslint-plugin-prettier"
+        "tslint:recommended"
     ],
     "linterOptions": {
         "exclude": [
