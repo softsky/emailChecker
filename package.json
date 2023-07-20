@@ -94,7 +94,7 @@
         "email-existence": "^0.1.6",
         "email-exists": "^0.2.1",
         "lodash": "^4.17.11",
-        "mongoose": "^5.4.10",
+        "mongoose": "^5.13.20",
         "p-queue": "^3.0.0",
         "p-throttle": "^2.1.1",
         "promise-limit": "^2.7.0",
